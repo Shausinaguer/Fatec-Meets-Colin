@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Barra de Navegação */
+
+.nav-top{
+    background-color: lightsalmon;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4vh;
+    padding-right: 4vh;
+    align-items: center;
+}
+
+.nav-list{
+    background-color: lightblue;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-list li{
+    padding: 3vh;
+}
+.nav-list li:hover{
+    background-color: blue;
+}
+
+.logo{
+    height: 6vh;
+    border-radius: 100%;
+}
+
+/* Fim Barra de Navegação */
+
+/* Corpo do Projeto */
+
+    /* Section 1 */
+
+main{
+    background: url("../images//ilustrative_images/alunos_na_grama.jpg") no-repeat center center;
+    height: 92vh;
+}
+
+    /* Section 2 */
+
+.section2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 1150px;
+    margin-top: 100px;
+}
+
+.show-item h1{
+    width: 200px;
+}
+
+.show-item p{
+    font-size: larger;
+    width: 550px;
+}
+
+.show-item img{
+    width: 500px;
+}
+
+    /* Section 3 */
+
+.grid{
+
+}
+
+.grid li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 280px;
+    height: 420px;
+    padding-block: 20px;
+}
+.grid li img{
+    width: 200px;
+}
+
+/* Fim Corpo do Projeto */
+
+/* Rodapé */
+
+footer{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 100px;
+}
+
+.nav-bottom{
+    background-color: lightsalmon;
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fim Rodapé */
