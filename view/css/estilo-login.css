@@ -1,44 +1,39 @@
-body{
-    background: #fe3632;;
-}
-
-.formulario{
+body {
+    font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
-
-
+    height: 100vh;
+    background-color: #f4f4f4;
 }
-
-.div-form{
-    background-color: white;
-    min-height: 15vh;
-    min-width: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin: 10px;
-    padding: 90px;
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+input {
+    width: calc(100% - 16px); /* Ajuste para remover a bordinha extra */
+    padding: 8px;
+    margin: 5px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho */
 }
-
-.div-form input{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    border-radius: 5px;
-    text-decoration: none;
+button {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
-
-.div-form input:hover {
-    background-color: #ddd;
+button:hover {
+    background: #0056b3;
 }
-
-#imagem-login{
-
-    max-width: 30%;
-
+p {
+    margin-top: 10px;
 }
