@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Post - Fatec Meet</title>
+    <link rel="stylesheet" href="css/estilo-postar.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-item">Página inicial</a>
+            <a href="postar.html" class="navbar-item">Postar</a>
+            <a href="#" class="navbar-item">Buscar</a>
+            <a href="feed.html" class="navbar-item">Feed</a>
+            <a href="#" class="navbar-item">Perfil</a>
+        </div>
+    </nav>
+
+    <div class="post-form">
+        <h2>Criar Novo Post</h2>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+            <label for="imagem">Selecionar Imagem:</label>
+            <input type="file" id="imagem" name="imagem" accept="image/*" required>
+
+            <button type="submit">Postar</button>
+        </form>
+    </div>
+
+</body>
+</html>
