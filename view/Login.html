@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../view/css/estilo-login.css">
     <title>Login</title>
+    <link rel="stylesheet" href="css/estilo-cadastro.css"> <!-- Usando o mesmo CSS -->
 </head>
 <body>
-    <main>
 
-        <form class="formulario" action="../view/Feeds.html">
+    <?php if (isset($_GET['erro'])): ?>
+    <div class="erro" style="color: red; margin-bottom: 15px;">
+        E-mail ou senha incorretos!
+    </div>
+    <?php endif; ?>
 
-            <img id="imagem-login" src="../view/imagens/logo.png" alt="">
-        <div class="div-form">
-            E-mail:<input type="email"> 
-            Senha:<input type="password"> <br>
-
-            <input type="submit" value="Entrar">
-
-        </div>
-
+    <div class="container">
+        <h2>Login</h2>
+        <form action="PHP/Valida.php" method="POST">
+            <img src="../view/imagens/logo.png" alt="Logo" style="width: 100px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+            <hr>
+            <p style="text-align: center; margin: 15px 0; font-size: 14px;">Não tem uma conta? <a href="cadastro.html" style="color: #28a745;">Cadastre-se aqui</a></p>
         </form>
-
-
-    </main>
+        <a href="../index.html"><button>Voltar</button></a>
+    </div>
 </body>
 </html>
