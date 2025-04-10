@@ -11,7 +11,7 @@ body {
     background-color: #fe3632;
     padding: 10px 20px;
     position: fixed;
-    width: 100%;
+    width: 98%;
     top: 0;
     z-index: 1000;
     display: flex;
