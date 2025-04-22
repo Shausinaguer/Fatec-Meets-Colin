@@ -29,5 +29,25 @@ RN 04 - Alunos menores de 18 anos tem acesso limitado ao sistema.
 
 
 Requisitos Não Funcionais
-RNF 01 - Número de Cliques
-RNF 02 - 
+RNF 01 - Os usuários devem precisar de no máximo 5 cliques para acessar alguma funcionalidade.
+RNF 02 - Só poderá se cadastrar usuários que possuirem um email institucional.
+RNF 03 - As senhas devem ser criptografadas.
+RNF 04 - Os usuários podem escolher se querem visualizar ou não suas senhas.
+RNF 05 - Enviar email de troca de senha.
+RNF 06 - Ao interagir com alguma função do sistema, será requerido que usuários sem login, se logue ou se registre.
+RNF 07 - A filtragem se limita apenas a localização dos Eventos.
+RNF 08 - Posts devem ter titulo, local, data, hora, descrição e uma imagem.
+RNF 09 - Comentarios podem ter no máximo 255 caracteres.
+RNF 10 - Enquetes devem exibir a quantidade de usuários que responderam.
+RNF 11 - Ao denunciar deve-se especificar o tipo da denuncia, e descrever de forma breve.
+RNF 12 - Durante a criação de eventos (Meets), deve-se especificar a quantidade de usuários que poderão participar.
+RNF 13 - Ainda durante a criação de eventos (Meets), deve-se especificar a atividade para fins de registro.
+RNF 14 - Enquetes de confirmação de presença somente serão realizadas durante os eventos.
+RNF 15 - Acesso de telas por link(a decidir).
+RNF 16 - Os usuários receberam "Medalhas" em seu perfil após realizar alguma determinada atividade dentro do sistema.
+RNF 17 - Os históricos de atividades deve listar todas os eventos (Meets) o usuário participou e a data e hora.
+RNF 18 - Ex-alunos poderão ter acesso apenas ao histórico de atividades.
+RNF 19 - Alunos cadastrados com idade menor à 18 anos, não poderão criar eventos (Meets).
+
+Requisitos Não Funcionais (Requisitos de acessibilidade e usabilidade)
+RNF 20 -
