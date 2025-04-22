@@ -1,0 +1,33 @@
+
+Requisitos Funcionais
+RF 01 - Cadastrar Usuários
+RF 02 - Logar Usuários
+RF 03 - Recuperar Senha
+RF 04 - Visualizar Feed
+RF 05 - Filtrar Feed
+RF 06 - Visualizar Perfis
+RF 07 - Configurar Perfil
+RF 08 - Publicar Posts
+RF 09 - Curtir Posts
+RF 10 - Publicar Comentários
+RF 11 - Publicar Enquetes
+RF 12 - Denunciar Conteúdo
+RF 13 - Criar Eventos (Meets)
+RF 14 - Participar de Eventos
+RF 15 - Confirmar Presença
+RF 16 - Compartilhar Eventos
+RF 17 - Atribuir Conquistas
+RF 18 - Visualizar Conquistas
+RF 19 - Manter Histórico de Atividades
+RF 20 - Notificar Usuários Cadastrados
+
+Regras de Negócio
+RN 01 - Somente o corpo docente e alunos podem utilizar o sistema.
+RN 02 - Usuários sem cadastro poderão ter acesso apenas ao feed do Sistema.
+RN 03 - Ex-alunos devem ter acesso apenas ao histórico de atividades.
+RN 04 - Alunos menores de 18 anos tem acesso limitado ao sistema.
+
+
+Requisitos Não Funcionais
+RNF 01 - Número de Cliques
+RNF 02 - 
