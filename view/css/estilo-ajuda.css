@@ -6,15 +6,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* Remova overflow: hidden; */
-}
-
-.feed a{
-    
-        color: inherit;          /* ou color: black; para cor preta */
-        text-decoration: none;   /* remove o sublinhado */
-      
-      
 }
 
 #principal {
@@ -22,15 +13,6 @@ body {
     width: 100%;
     height: 100vh; /* Mantém a primeira seção em tela inteira */
 }
-
-.profile-img-mini {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
 
 #imagem-container {
     flex: 1;
