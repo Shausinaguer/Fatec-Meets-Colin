@@ -3,7 +3,7 @@ session_start();
 require_once 'Conexao.php';
 
 function redirecionaComErro() {
-    header("Location: ../view/Login.PHP?erro=1");
+    header('Location: ' . BASE_URL . 'view/login.php');
     exit;
 }
 

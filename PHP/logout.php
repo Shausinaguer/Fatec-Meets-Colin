@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('Location: /Meets-main/view/login.php');
+header('Location: ' . BASE_URL . 'view/login.php');
 exit;

@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 // Defina a URL base do projeto (ajuste conforme necessário)
-define('BASE_URL', '/Meets-main/'); // se o projeto estiver na pasta /Meets
+define('BASE_URL', '/'); // se o projeto estiver na pasta /Meets
 
 
 ?>

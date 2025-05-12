@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
-    header('Location: login.php');
+    header('Location: ' . BASE_URL . 'view/login.php');
     exit;
 }
 
