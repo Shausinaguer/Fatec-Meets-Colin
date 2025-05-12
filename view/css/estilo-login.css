@@ -5,6 +5,8 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
+    flex-direction: column;
+    margin: 0;
 }
 .container {
     background: white;
@@ -15,25 +17,41 @@ body {
     text-align: center;
 }
 input {
-    width: calc(100% - 16px); /* Ajuste para remover a bordinha extra */
+    width: calc(100% - 16px);
     padding: 8px;
-    margin: 5px 0;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho */
+    box-sizing: border-box;
 }
 button {
     width: 100%;
     padding: 10px;
-    background: #007bff;
+    background: #28a745;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 10px 0;
+    font-weight: bold;
 }
 button:hover {
-    background: #0056b3;
+    background: #218838;
+}
+#imagem-login {
+    display: block;
+    margin: 0 auto 15px auto;
 }
 p {
-    margin-top: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
 }
