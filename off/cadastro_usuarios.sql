@@ -27,15 +27,19 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `usuarios`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `usuario` varchar(50) NOT NULL,
-  `celular` varchar(20) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    nickmaname VARCHAR(50) NOT NULL,
+    numero VARCHAR(20),
+    senha VARCHAR(255) NOT NULL,
+    profile_image VARCHAR(255) DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+E=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `usuarios`

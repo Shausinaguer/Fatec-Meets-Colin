@@ -18,14 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     // Consulta com PDO
-    $stmt = $pdo->prepare("SELECT user_id, name, email, profile_image, password FROM users WHERE email = :email");
+    $stmt = $pdo->prepare("SELECT user_id, nome, email, profile_image, senha FROM users WHERE email = :email");
     $stmt->execute([':email' => $email]);
     $usuario = $stmt->fetch();
 
-    if ($usuario && password_verify($senha, $usuario['password'])) {
+    if ($usuario && password_verify($senha, $usuario['senha'])) {
         $_SESSION['usuario'] = [
             'id'    => $usuario['user_id'],
-            'nome'  => $usuario['name'],
+            'nome'  => $usuario['nome'],
             'email' => $usuario['email'],
             'foto'  => $usuario['profile_image'] ?? 'https://i.pravatar.cc/150?img=32'
         ];

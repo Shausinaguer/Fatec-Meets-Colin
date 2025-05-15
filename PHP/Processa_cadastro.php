@@ -1,9 +1,8 @@
 <?php
-// PHP/Processa_cadastro.php
+require __DIR__ . '/../config.php';
 
-require __DIR__ . '/../config.php'; // conexão e sessão já configuradas
-
-function redirecionaComMensagem($mensagem) {
+function redirecionaComMensagem($mensagem)
+{
     echo "<!DOCTYPE html>
     <html lang='pt-BR'>
     <head>
@@ -44,18 +43,17 @@ function redirecionaComMensagem($mensagem) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $nome           = $_POST['nome'] ?? '';
-    $email          = $_POST['email'] ?? '';
-    $usuario        = $_POST['usuario'] ?? '';
-    $celular        = $_POST['celular'] ?? '';
-    $senha          = $_POST['senha'] ?? '';
-    $repetir_senha  = $_POST['repetir_senha'] ?? '';
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $usuario = $_POST['usuario'] ?? '';
+    $numero = $_POST['numero'] ?? '';
+    $senha = $_POST['senha'] ?? '';
+    $repetir_senha = $_POST['repetir_senha'] ?? '';
 
     if ($senha !== $repetir_senha) {
         redirecionaComMensagem("❌ As senhas não coincidem!");
     }
 
-    // Verifica se o email já está cadastrado
     $stmt_verifica = $pdo->prepare("SELECT email FROM users WHERE email = :email");
     $stmt_verifica->execute([':email' => $email]);
 
@@ -63,21 +61,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         redirecionaComMensagem("⚠️ Este e-mail já está cadastrado!");
     }
 
-    // Criptografa a senha
     $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
 
-    // Insere no banco
-    $sql = "INSERT INTO users (name, email, nickmaname, numero, password) 
-            VALUES (:name, :email, :nickname, :numero, :password)";
-
+    $sql = "INSERT INTO users (nome, email, nickmaname, numero, senha) 
+        VALUES (:nome, :email, :nickmaname, :numero, :senha)";
     $stmt = $pdo->prepare($sql);
     $sucesso = $stmt->execute([
-        ':name'     => $nome,
-        ':email'    => $email,
-        ':nickname' => $usuario,
-        ':numero'   => $celular,
-        ':password' => $senha_cripto,
+        ':nome' => $nome,
+        ':email' => $email,
+        ':nickmaname' => $usuario,
+        ':numero' => $numero,
+        ':senha' => $senha_cripto,
     ]);
+
 
     if ($sucesso) {
         header("Location: " . BASE_URL . "index.php");

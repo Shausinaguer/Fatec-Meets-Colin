@@ -1,17 +1,20 @@
 <?php
-// htdocs/config.php
-session_start();
+// Ativa exibição de erros (desative em produção)
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// URL base do projeto (se estiver acessando em http://localhost/, deixe como '/')
-define('BASE_URL', '/');
+// Inicia a sessão se ainda não foi iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-// Conexão com pdo
-session_start();
+// Define a URL base apenas se ainda não estiver definida
+if (!defined('BASE_URL')) {
+    define('BASE_URL', '/'); // ajuste se seu projeto estiver em subpasta
+}
 
-// Caminho base do projeto, ex: "/" ou "/meusite/"
-define('BASE_URL', '/');
-
-// Dados de conexão
+// Dados de conexão com banco de dados
 $host = 'sql312.infinityfree.com';
 $db   = 'if0_38701439_fatecmeets';
 $user = 'if0_38701439';

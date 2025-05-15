@@ -1,8 +1,6 @@
 <?php
-// components/navbar.php
-// Incluir o arquivo de configuração
+// view/cadastro.php
 require __DIR__ . '/../config.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -11,12 +9,13 @@ require __DIR__ . '/../config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/estilo-cadastro.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>view/css/estilo-cadastro.css">
 </head>
 <body>
     <div class="container">
         <h2>Cadastro</h2>
-        <form action="<?= BASE_URL ?>Processa_cadastro.php" method="POST">
+
+        <form action="<?= BASE_URL ?>../PHP/Processa_cadastro.php" method="POST">
             <input type="text" name="nome" placeholder="Nome Completo" required>
             <input type="text" name="usuario" placeholder="Apelido (Nickname)" required>
             <input type="email" name="email" placeholder="E-mail" required>
@@ -27,7 +26,8 @@ require __DIR__ . '/../config.php';
             <button type="submit">Cadastrar</button>
             <hr>
         </form>
-        <a href="../index.php"><button>Voltar</button></a>
+
+        <a href="<?= BASE_URL ?>index.php"><button>Voltar</button></a>
     </div>
 </body>
 </html>
