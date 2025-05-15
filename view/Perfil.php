@@ -1,7 +1,13 @@
-<?php
-// components/navbar.php
-// Incluir o arquivo de configuração
-require __DIR__ . '/config.php';
+<?php require __DIR__ . '/../config.php';  // ou '/config.php' se estiver em raiz
+      require __DIR__ . '/../components/navbar.php';
+
+require __DIR__ . '/../config.php';
+if (!isset($_SESSION['usuario'])) {
+    header('Location: ' . BASE_URL . 'view/Login.php');
+    exit;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -14,13 +20,7 @@ require __DIR__ . '/config.php';
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php
-    session_start();
-    if (!isset($_SESSION['usuario'])) {
-        header('Location: login.php');
-        exit;
-    }
-    ?>
+
     <!-- Navbar -->
 <?php include '../components/navbar.php'; ?>
 
