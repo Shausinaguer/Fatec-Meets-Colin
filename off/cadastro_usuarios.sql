@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `usuarios`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `usuario`, `celular`, `senha`, `data_cadastro`) VALUES
+INSERT INTO `users` (`id`, `nome`, `email`, `usuario`, `celular`, `senha`, `data_cadastro`) VALUES
 (1, 'Felipe Catarino', 'felipecatarinu@gmail.com', 'FeFedaZL', '11985723027', '$2y$10$DOnxolVmSl/AMeZIg9BneO0HQcFa7j6MAQWzH924CtaOcP1aulSGm', '2025-04-08 13:42:37'),
 (3, 'Nicolas ferreira', 'nicolas@gmail.com', 'Nicky', '11985723027', '$2y$10$vHqb4oHRa0v7vW2jvPMP5eBWE2EUdHzufDkJF4iee.NMzj9N1aLBa', '2025-04-08 13:48:22');
 
