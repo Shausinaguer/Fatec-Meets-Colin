@@ -1,5 +1,7 @@
+<?php
+require __DIR__ . '/config.php';
+?>
 
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +15,7 @@
 <body>
 
 <!-- Navbar -->
-<?php include 'components/navbar.php'; ?>
+<?php include __DIR__ . '/components/navbar.php'; ?>
 
 
 <!-- Feed de Posts -->

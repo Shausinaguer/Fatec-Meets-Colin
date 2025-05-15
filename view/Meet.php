@@ -1,6 +1,14 @@
 <?php 
+
+
+// components/navbar.php
+// Incluir o arquivo de configuração
+require __DIR__ . '/config.php';
+
     session_start(); 
     include '../components/navbar.php'; 
+
+
 ?>
 
 <!DOCTYPE html>

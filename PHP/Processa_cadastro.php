@@ -1,5 +1,7 @@
 <?php
-require_once 'conexao.php';
+// PHP/Processa_cadastro.php
+
+require __DIR__ . '/../config.php'; // conexão e sessão já configuradas
 
 function redirecionaComMensagem($mensagem) {
     echo "<!DOCTYPE html>
@@ -41,48 +43,48 @@ function redirecionaComMensagem($mensagem) {
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $usuario = $_POST['usuario'] ?? '';
-    $celular = $_POST['celular'] ?? '';
-    $senha = $_POST['senha'] ?? '';
-    $repetir_senha = $_POST['repetir_senha'] ?? '';
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nome           = $_POST['nome'] ?? '';
+    $email          = $_POST['email'] ?? '';
+    $usuario        = $_POST['usuario'] ?? '';
+    $celular        = $_POST['celular'] ?? '';
+    $senha          = $_POST['senha'] ?? '';
+    $repetir_senha  = $_POST['repetir_senha'] ?? '';
 
-    if ($senha != $repetir_senha) {
+    if ($senha !== $repetir_senha) {
         redirecionaComMensagem("❌ As senhas não coincidem!");
     }
 
-    $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
+    // Verifica se o email já está cadastrado
+    $stmt_verifica = $pdo->prepare("SELECT email FROM users WHERE email = :email");
+    $stmt_verifica->execute([':email' => $email]);
 
-    $sql_verifica = "SELECT email FROM users WHERE email = ?";
-    $stmt_verifica = $conexao->prepare($sql_verifica);
-    $stmt_verifica->bind_param("s", $email);
-    $stmt_verifica->execute();
-    $stmt_verifica->store_result();
-
-    if ($stmt_verifica->num_rows > 0) {
+    if ($stmt_verifica->fetch()) {
         redirecionaComMensagem("⚠️ Este e-mail já está cadastrado!");
     }
 
-    $stmt_verifica->close();
+    // Criptografa a senha
+    $senha_cripto = password_hash($senha, PASSWORD_DEFAULT);
 
+    // Insere no banco
     $sql = "INSERT INTO users (name, email, nickmaname, numero, password) 
-            VALUES (?, ?, ?, ?, ?)";
+            VALUES (:name, :email, :nickname, :numero, :password)";
 
-    $stmt = $conexao->prepare($sql);
-    $stmt->bind_param("sssss", $nome, $email, $usuario, $celular, $senha_cripto);
+    $stmt = $pdo->prepare($sql);
+    $sucesso = $stmt->execute([
+        ':name'     => $nome,
+        ':email'    => $email,
+        ':nickname' => $usuario,
+        ':numero'   => $celular,
+        ':password' => $senha_cripto,
+    ]);
 
-    if ($stmt->execute()) {
-        header("Location: ../index.php");
+    if ($sucesso) {
+        header("Location: " . BASE_URL . "index.php");
         exit();
     } else {
-        redirecionaComMensagem("Erro ao cadastrar: " . $conexao->error);
+        redirecionaComMensagem("Erro ao cadastrar. Tente novamente.");
     }
-
-    $stmt->close();
-    $conexao->close();
 } else {
     redirecionaComMensagem("Acesso inválido ao formulário.");
 }
-?>

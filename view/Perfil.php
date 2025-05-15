@@ -1,3 +1,9 @@
+<?php
+// components/navbar.php
+// Incluir o arquivo de configuração
+require __DIR__ . '/config.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

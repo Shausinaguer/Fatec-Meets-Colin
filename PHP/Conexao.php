@@ -1,4 +1,9 @@
 <?php
+
+// components/navbar.php
+// Incluir o arquivo de configuração
+require __DIR__ . '/config.php';
+
 // Configurações do banco de dados
 $servidor = "sql312.infinityfree.com"; // onde o MySQL está instalado
 $usuario = "if0_38701439"; // usuário do banco (padrão XAMPP/WAMP é 'root')
