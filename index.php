@@ -14,6 +14,12 @@ require __DIR__ . '/config.php';
 </head>
 <body>
 
+
+<button id="toggle-dark-mode" style="position: fixed; top: 10px; right: 10px; z-index: 999;">
+    🌙
+</button>
+
+
 <!-- Navbar -->
 <?php include __DIR__ . '/components/navbar.php'; ?>
 
@@ -39,6 +45,26 @@ require __DIR__ . '/config.php';
  document.querySelector('.navbar-links').classList.toggle('active');
  });
 </script>
+
+
+<script>
+    const toggle = document.getElementById('toggle-dark-mode');
+    const body = document.body;
+
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+    }
+
+    toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+    });
+</script>
+
 
 </body>
 </html>
