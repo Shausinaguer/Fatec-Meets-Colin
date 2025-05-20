@@ -1,7 +1,3 @@
-<?php require __DIR__ . '/../config.php';  // ou '/config.php' se estiver em raiz
-      require __DIR__ . '/../components/navbar.php';
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,7 +10,7 @@
 <body>
 
 
-
+<?php include '../components/navbar.php'; ?>
 
 <div class="container">
     <h1>Buscar Eventos</h1>
