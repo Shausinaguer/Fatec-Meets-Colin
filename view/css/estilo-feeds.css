@@ -187,6 +187,21 @@ button:hover, .edit-btn:hover {
     border: 1px solid var(--primary-color);
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark-mode .post {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+/* E outras variações, conforme os elementos */
+
+
+
+
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar {
@@ -202,3 +217,4 @@ button:hover, .edit-btn:hover {
         max-width: 90%;
     }
 }
+

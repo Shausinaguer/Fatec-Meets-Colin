@@ -24,8 +24,6 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <!-- Feed de Posts -->
 <div class="feed">
-
-    <!-- Posts reais do banco de dados -->
     <?php if (count($eventos) === 0): ?>
         <p style="text-align:center;">Nenhum evento ainda. Seja o primeiro a postar!</p>
     <?php else: ?>
@@ -54,9 +52,15 @@ $eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <script>
+    // Toggle menu (mobile)
     document.querySelector('.menu-toggle').addEventListener('click', function () {
         document.querySelector('.navbar-links').classList.toggle('active');
     });
+
+    // Aplica dark-mode se já estiver salvo
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
 </script>
 
 </body>
