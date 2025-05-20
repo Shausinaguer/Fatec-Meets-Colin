@@ -1,4 +1,9 @@
 <?php
+
+// components/navbar.php
+// Incluir o arquivo de configuração
+require __DIR__ . '/config.php';
+
 // Configurações do banco de dados
 $servidor = "localhost"; // onde o MySQL está instalado
 $usuario = "root"; // usuário do banco (padrão XAMPP/WAMP é 'root')
