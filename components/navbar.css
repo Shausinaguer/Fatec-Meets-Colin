@@ -1,4 +1,5 @@
 
+/* matheus adcionei ::-webkit-textfield-decoration-container */
 :root {
     --primary-color: #ff6b6b; /* Vermelho pastel */
     --secondary-color: #ff9e9e; /* Vermelho mais claro */
@@ -10,25 +11,25 @@
     --btn-hover: #ff5252;
 }
 
-.profile-img-mini {
-    width: 40px;
-   height: 40px;
-   border-radius: 50%;
-   object-fit: cover;
-   margin-right: 10px;
-   }
-   .navbar-user-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    }
+/* ===== MODO ESCURO (aplicado com .dark-mode no <body>) ===== */
+body.dark-mode {
+    --primary-color: #bb86fc;
+    --secondary-color: #9b6dfc;
+    --text-color: #f0f0f0;
+    --light-gray: #2c2c2c;
+    --white: #1a1a1a;
+    --background: #121212;
+    --btn-color: #bb86fc;
+    --btn-hover: #9b6dfc;
+}
 
+/* ===== ELEMENTOS GERAIS ===== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--background);
+    color: var(--text-color);
 }
 
 button, .edit-btn {
@@ -46,7 +47,21 @@ button:hover, .edit-btn:hover {
     background-color: var(--btn-hover);
 }
 
-/* Navbar Responsiva */
+.profile-img-mini {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.navbar-user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
     background: var(--white);
     padding: 15px 0;
@@ -91,18 +106,19 @@ button:hover, .edit-btn:hover {
     transition: color 0.3s;
 }
 
-.navbar-item:hover, .navbar-item.active {
+.navbar-item:hover,
+.navbar-item.active {
     color: var(--primary-color);
 }
 
-/* Menu Hambúrguer para mobile */
+/* ===== MENU MOBILE ===== */
 .menu-toggle {
     display: none;
     cursor: pointer;
     padding: 10px;
 }
 
-/* Estilos responsivos */
+/* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
@@ -110,17 +126,28 @@ button:hover, .edit-btn:hover {
         flex-direction: column;
         gap: 0;
     }
-    
+
     .navbar-links.active {
         display: flex;
     }
-    
+
     .navbar-item {
         padding: 15px;
         border-top: 1px solid var(--light-gray);
     }
-    
+
     .menu-toggle {
         display: block;
+    }
+
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
 }
