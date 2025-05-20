@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt_verifica->close();
 
-    $sql = "INSERT INTO users (name, email, nickmaname, numero, password) 
+    $sql = "INSERT INTO users (nome, email, usuario, celular, senha) 
             VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $conexao->prepare($sql);
